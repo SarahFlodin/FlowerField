@@ -45,13 +45,14 @@ const flowerImages = {
   // get a reference to the flower container element
   const container = document.getElementById('flower-container');
   
-  // an array to store the previously pressed keys
-  const previouslyPressedKeys = [];
-  
   // add an event listener to the document object to detect key presses
   document.addEventListener('keydown', (event) => {
     // get the key code of the pressed key
     const keyCode = event.keyCode;
+
+    addEventListener("keypress", (event) => {
+      document.querySelector("h1").innerHTML = document.querySelector("h1").innerHTML + event.key;
+    })
   
     // check if there is a flower image associated with the key code
     if (flowerImages.hasOwnProperty(keyCode)) {
@@ -76,16 +77,6 @@ const flowerImages = {
       setTimeout(() => {
         flower.style.opacity = 1;
       }, 10);
-  
-      // add the pressed key to the array of previously pressed keys
-      previouslyPressedKeys.push(event.key);
-  
-      // update the text of the previously pressed keys element
-      const previouslyPressedKeysElement = document.getElementById('previously-pressed-keys');
-      previouslyPressedKeysElement.innerText = previouslyPressedKeys.join(', ');
     }
-  
-    // update the text of the currently pressed key element
-    const currentlyPressedKeyElement = document.getElementById('currently-pressed-key');
-    currentlyPressedKeyElement.innerText = event.key;
+
   });
