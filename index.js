@@ -45,14 +45,15 @@ const flowerImages = {
   // get a reference to the flower container element
   const container = document.getElementById('flower-container');
   
+  addEventListener("keypress", (event) => {
+    document.querySelector("h1").innerText = document.querySelector("h1").innerText + event.key;
+  })
   // add an event listener to the document object to detect key presses
   document.addEventListener('keydown', (event) => {
     // get the key code of the pressed key
     const keyCode = event.keyCode;
 
-    addEventListener("keypress", (event) => {
-      document.querySelector("h1").innerHTML = document.querySelector("h1").innerHTML + event.key;
-    })
+
   
     // check if there is a flower image associated with the key code
     if (flowerImages.hasOwnProperty(keyCode)) {
