@@ -1,4 +1,6 @@
 body {
+    width: 100vw;
+    height: 100vh;
     margin: 0;
     padding: 0;
   }
@@ -6,7 +8,7 @@ body {
   #flower-container {
     position: relative;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     background-color: #C9d39a;
     overflow: hidden;
   }
