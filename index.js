@@ -48,6 +48,11 @@ const flowerImages = {
   addEventListener("keypress", (event) => {
     document.querySelector("h1").innerText = document.querySelector("h1").innerText + event.key;
   })
+
+  function reload() {
+    location.reload()
+  }
+
   // add an event listener to the document object to detect key presses
   document.addEventListener('keydown', (event) => {
     // get the key code of the pressed key
@@ -81,3 +86,4 @@ const flowerImages = {
     }
 
   });
+  
