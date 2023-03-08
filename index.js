@@ -28,7 +28,7 @@ const flowerImages = {
     90: 'flowers/flower-z.png', // 'z' key
     219: 'flowers/flower-å.png', // 'å' key
     222: 'flowers/flower-ä.png', // 'ä' key
-    186: 'flowers/flower-ö.png', // 'ö' key
+    153: 'flowers/flower-ö.png', // 'ö' key
     49: 'flowers/flower-1.png', // '1' key
     50: 'flowers/flower-2.png', // '2' key
     51: 'flowers/flower-3.png', // '3' key
