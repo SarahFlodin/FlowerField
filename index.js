@@ -50,12 +50,9 @@ const flowerImages = {
   })
 
   function reload() {
-    const mower = document.querySelector("#mower");
-
     mower.addEventListener("click", () => {
-      mower.classList.add("animate");
+    mower.classList.add("animate");
       
-      // Reload the page after 5 seconds
       setTimeout(() => {
         location.reload();
       }, 3000);
