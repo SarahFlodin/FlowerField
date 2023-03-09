@@ -48,15 +48,25 @@ const flowerImages = {
   addEventListener("keypress", (event) => {
     console.log(event.keyCode)
     if (event.keyCode == 32) {
-      document.querySelector("h1").innerText == ' ' + document.querySelector("h1").innerText + event.key;
+      const space = document.querySelector("h1").innerText = (" ");
+      document.querySelector("h1").innerText = document.querySelector("h1").innerText & space;
     } else {
-          document.querySelector("h1").innerText = document.querySelector("h1").innerText + event.key;
+      document.querySelector("h1").innerText = document.querySelector("h1").innerText + event.key;
     }
   })
+
+
+//Mower - Sound & Movement
+
+var mowerSound = document.getElementById("mower-sound");
+var mower = document.getElementById("mower");
 
   function reload() {
     mower.addEventListener("click", () => {
     mower.classList.add("animate");
+
+    mowerSound.currentTime = 0;
+    mowerSound.play();
       
       setTimeout(() => {
         location.reload();
