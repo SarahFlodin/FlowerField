@@ -59,16 +59,16 @@ const flowerImages = {
     });
   }
 
-  // add an event listener to the document object to detect key presses
+
   document.addEventListener('keydown', (event) => {
-    // get the key code of the pressed key
     const keyCode = event.keyCode;
-
-
   
-    // check if there is a flower image associated with the key code
-    if (flowerImages.hasOwnProperty(keyCode)) {
-      // get the flower image path for the key code
+    if (keyCode === 32) {
+      // space bar was pressed, add a space to the h1 element
+      const h1 = document.querySelector('h1');
+      h1.innerText += ' ';
+    } else if (flowerImages.hasOwnProperty(keyCode)) {
+      // a flower key was pressed, add the flower image
       const flowerImage = flowerImages[keyCode];
   
       // create a new image element to display the flower
@@ -90,6 +90,4 @@ const flowerImages = {
         flower.style.opacity = 1;
       }, 10);
     }
-
   });
-  
