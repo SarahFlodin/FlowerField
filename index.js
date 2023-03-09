@@ -110,20 +110,18 @@ let seagull = document.getElementById("seagull-sound");
 function startFlying() {
   flying.style.transform = 'translateX(-100%)';
   animationId = requestAnimationFrame(startFlying);
-
-  seagull.currentTime = 0;
-  seagull.play();
 };
 
 function stopFlying() {
   flying.style.transform = 'translateX(0)';
   cancelAnimationFrame(animationId);
-
-  seagull.currentTime = 0;
-  seagull.play();
 };
 
 flying.addEventListener('click', () => {
+
+  seagull.currentTime = 0;
+  seagull.play();
+
   if (isFlying) {
     stopFlying();
     isFlying = false;
