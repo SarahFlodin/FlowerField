@@ -46,7 +46,12 @@ const flowerImages = {
   const container = document.getElementById('flower-container');
   
   addEventListener("keypress", (event) => {
-    document.querySelector("h1").innerText = document.querySelector("h1").innerText + event.key;
+    console.log(event.keyCode)
+    if (event.keyCode == 32) {
+      document.querySelector("h1").innerText == ' ' + document.querySelector("h1").innerText + event.key;
+    } else {
+          document.querySelector("h1").innerText = document.querySelector("h1").innerText + event.key;
+    }
   })
 
   function reload() {
@@ -60,14 +65,9 @@ const flowerImages = {
   }
 
 
-  document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', (event) => {
     const keyCode = event.keyCode;
   
-    if (keyCode === 32) {
-      // space bar was pressed, add a space to the h1 element
-      const h1 = document.querySelector('h1');
-      h1.innerText += ' ';
-    } else if (flowerImages.hasOwnProperty(keyCode)) {
       // a flower key was pressed, add the flower image
       const flowerImage = flowerImages[keyCode];
   
@@ -89,5 +89,34 @@ const flowerImages = {
       setTimeout(() => {
         flower.style.opacity = 1;
       }, 10);
-    }
-  });
+});
+
+
+const flying = document.getElementById('flying');
+let isFlying = false;
+let animationId;
+
+function startFlying() {
+  flying.style.transform = 'translateX(-100%)';
+  animationId = requestAnimationFrame(startFlying);
+}
+
+function stopFlying() {
+  flying.style.transform = 'translateX(0)';
+  cancelAnimationFrame(animationId);
+}
+
+flying.addEventListener('click', () => {
+  if (isFlying) {
+    stopFlying();
+    isFlying = false;
+  } else {
+    startFlying();
+    isFlying = true;
+  }
+});
+
+    
+
+    
+    
