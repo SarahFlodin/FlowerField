@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/yov7nmu.css">
     <title>Document</title>
+    
 </head>
 <body>
     <div id="container">
-        
+
         <h1></h1>
         <img id="flying" src="flowers/flyingmas.png" alt="flying bird">
     
         <div id="flower-container">
             <img id="bird" src="flowers/mas.png" alt="bird">
             <img id="mower" src="flowers/mow.png" alt="Click to mow the field" onclick="reload()">
+        
         </div>
+        
+        <audio autoplay loop controlsList="nodownload" style="display:none">
+            <source src="flowers/BirdSound.mp3" type="audio/mpeg">
+        </audio>
 
     </div>
     <script src="index.js"></script> 
