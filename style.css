@@ -67,6 +67,12 @@ h1 {
   animation: zigzag 3s linear 1;
 }
 
+button {
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+}
+
 @keyframes zigzag {
   0% {
     top: 65%;

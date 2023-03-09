@@ -91,5 +91,11 @@ const flowerImages = {
       }, 10);
     }
 
-  });
+  });  
   
+  // OM vi vill att det refreshar via enter 
+  // document.addEventListener('keydown', function(event) {
+  //  if (event.code === 'Enter') {
+  //    location.reload(); }
+  // });
+    
