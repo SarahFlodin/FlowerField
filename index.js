@@ -65,7 +65,7 @@ var mower = document.getElementById("mower");
     mower.addEventListener("click", () => {
     mower.classList.add("animate");
 
-    mowerSound.currentTime = 0;
+    mowerSound.currentTime = 0.5;
     mowerSound.play();
       
       setTimeout(() => {
@@ -105,16 +105,20 @@ document.addEventListener('keydown', (event) => {
 const flying = document.getElementById('flying');
 let isFlying = false;
 let animationId;
+let seagull = document.getElementById("seagull-sound");
 
 function startFlying() {
   flying.style.transform = 'translateX(-100%)';
   animationId = requestAnimationFrame(startFlying);
-}
+
+  seagull.currentTime = 0;
+  seagull.play();
+};
 
 function stopFlying() {
   flying.style.transform = 'translateX(0)';
   cancelAnimationFrame(animationId);
-}
+};
 
 flying.addEventListener('click', () => {
   if (isFlying) {
@@ -144,12 +148,12 @@ function startCircle() {
   }
 
   animate();
-}
+};
 
 function stopCircle() {
   bird.style.transform = '';
   cancelAnimationFrame(startCircle);
-}
+};
 
 bird.addEventListener('click', () => {
   startCircle();
