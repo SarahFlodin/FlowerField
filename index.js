@@ -116,7 +116,34 @@ flying.addEventListener('click', () => {
   }
 });
 
-    
+const bird = document.getElementById('bird');
+
+function startCircle() {
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+  const radius = 100;
+  let angle = 0;
+  const speed = 0.05;
+
+  function animate() {
+    const x = centerX + radius * Math.cos(angle);
+    const y = centerY + radius * Math.sin(angle);
+    bird.style.transform = `translate(${x}px, ${y}px)`;
+    angle += speed;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+}
+
+function stopCircle() {
+  bird.style.transform = '';
+  cancelAnimationFrame(startCircle);
+}
+
+bird.addEventListener('click', () => {
+  startCircle();
+});
 
     
     
