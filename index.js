@@ -131,6 +131,7 @@ flying.addEventListener('click', () => {
 });
 
 const bird = document.getElementById('bird');
+let seagullfunny = document.getElementById("seagull-funny");
 
 function startCircle() {
   const centerX = window.innerWidth / 2;
@@ -157,6 +158,8 @@ function stopCircle() {
 
 bird.addEventListener('click', () => {
   startCircle();
+  seagullfunny.currentTime = 0;
+  seagullfunny.play()
 });
 
     
