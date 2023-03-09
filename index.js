@@ -118,6 +118,9 @@ function startFlying() {
 function stopFlying() {
   flying.style.transform = 'translateX(0)';
   cancelAnimationFrame(animationId);
+
+  seagull.currentTime = 0;
+  seagull.play();
 };
 
 flying.addEventListener('click', () => {
