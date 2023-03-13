@@ -135,8 +135,8 @@ const bird = document.getElementById('bird');
 let seagullfunny = document.getElementById("seagull-funny");
 
 function startCircle() {
-  const centerX = window.innerWidth / 2;
-  const centerY = window.innerHeight / 2;
+  const centerX = window.innerWidth / 1.2;
+  const centerY = window.innerHeight / 1.2;
   const radius = 100;
   let angle = 0;
   const speed = 0.05;
