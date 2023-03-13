@@ -39,12 +39,9 @@ const flowerImages = {
     56: 'flowers/flower-8.png', // '8' key
     57: 'flowers/flower-9.png', // '9' key
     48: 'flowers/flower-0.png', // '0' key,
-    // add more keys and flower images as needed
   };
   
-  // get a reference to the flower container element
-  const container = document.getElementById('flower-container');
-  
+  // text for keypress
   addEventListener("keypress", (event) => {
     console.log(event.keyCode)
     if (event.keyCode == 32) {
@@ -56,8 +53,7 @@ const flowerImages = {
   })
 
 
-//Mower - Sound & Movement
-
+// mower - Sound & Movement
 var mowerSound = document.getElementById("mower-sound");
 var mower = document.getElementById("mower");
 
@@ -74,6 +70,8 @@ var mower = document.getElementById("mower");
     });
   }
 
+// get a reference to the flower container element
+const container = document.getElementById('flower-container');
 
 document.addEventListener('keydown', (event) => {
     const keyCode = event.keyCode;
@@ -101,7 +99,7 @@ document.addEventListener('keydown', (event) => {
       }, 10);
 });
 
-
+// momvement for seagull flying
 const flying = document.getElementById('flying');
 let isFlying = false;
 let animationId;
@@ -131,8 +129,9 @@ flying.addEventListener('click', () => {
   }
 });
 
+// movement for seagull walking
 const bird = document.getElementById('bird');
-let seagullfunny = document.getElementById("seagull-funny");
+let seagullwalk = document.getElementById("seagull-walk");
 
 function startCircle() {
   const centerX = window.innerWidth / 1.2;
@@ -159,8 +158,8 @@ function stopCircle() {
 
 bird.addEventListener('click', () => {
   startCircle();
-  seagullfunny.currentTime = 0;
-  seagullfunny.play()
+  seagullwalk.currentTime = 0;
+  seagullwalk.play()
 });
 
     
