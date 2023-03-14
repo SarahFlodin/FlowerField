@@ -43,7 +43,6 @@ const flowerImages = {
   
   // text for keypress
   document.addEventListener("keypress", (event) => {
-
     document.querySelector("h1").textContent += event.key
 })
 
@@ -52,46 +51,47 @@ const flowerImages = {
 var mowerSound = document.getElementById("mower-sound");
 var mower = document.getElementById("mower");
 
-  function reload() {
-    mower.addEventListener("click", () => {
-    mower.classList.add("animate");
+function reload() {
+  mower.addEventListener("click", () => {
+  mower.classList.add("animate");
 
-    mowerSound.currentTime = 0.5;
-    mowerSound.play();
+  mowerSound.currentTime = 0.5;
+   mowerSound.play();
       
-      setTimeout(() => {
-        location.reload();
-      }, 3000);
-    });
-  }
+    setTimeout(() => {
+      location.reload();
+    }, 3000);
+  });
+}
 
 // get a reference to the flower container element
 const container = document.getElementById('flower-container');
 
 document.addEventListener('keydown', (event) => {
-    const keyCode = event.keyCode;
+  const keyCode = event.keyCode;
   
-      // a flower key was pressed, add the flower image
-      const flowerImage = flowerImages[keyCode];
+  // a flower key was pressed, add the flower image
+  const flowerImage = flowerImages[keyCode];
   
-      // create a new image element to display the flower
-      const flower = document.createElement('div');
-      flower.classList.add('flower');
-      flower.style.backgroundImage = `url(${flowerImage})`;
+  // create a new image element to display the flower
+  const flower = document.createElement('div');
+  flower.classList.add('flower');
+  flower.style.backgroundImage = `url(${flowerImage})`;
   
-      // set the position of the flower randomly within the container element
-      const x = Math.random() * container.offsetWidth;
-      const y = Math.random() * container.offsetHeight;
-      flower.style.left = `${x}px`;
-      flower.style.top = `${y}px`;
+  // set the position of the flower randomly within the container element
+  const x = Math.random() * container.offsetWidth;
+  const y = Math.random() * container.offsetHeight;
+  flower.style.left = `${x}px`;
+  flower.style.top = `${y}px`;
   
-      // append the flower to the container element
-      container.appendChild(flower);
+  // append the flower to the container element
+  container.appendChild(flower);
   
-      // animate the flower by making it opaque after a short delay
-      setTimeout(() => {
-        flower.style.opacity = 1;
-      }, 10);
+  // animate the flower by making it opaque after a short delay
+  setTimeout(() => {
+    flower.style.opacity = 1;
+  }, 10);
+
 });
 
 // momvement for seagull flying
@@ -142,7 +142,6 @@ function startCircle() {
     angle += speed;
     requestAnimationFrame(animate);
   }
-
   animate();
 };
 
