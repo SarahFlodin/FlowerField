@@ -42,15 +42,10 @@ const flowerImages = {
   };
   
   // text for keypress
-  addEventListener("keypress", (event) => {
-    console.log(event.keyCode)
-    if (event.keyCode == 32) {
-      const space = document.querySelector("h1").innerText = (" ");
-      document.querySelector("h1").innerText = document.querySelector("h1").innerText & space;
-    } else {
-      document.querySelector("h1").innerText = document.querySelector("h1").innerText + event.key;
-    }
-  })
+  document.addEventListener("keypress", (event) => {
+
+    document.querySelector("h1").textContent += event.key
+})
 
 
 // mower - Sound & Movement
@@ -149,11 +144,6 @@ function startCircle() {
   }
 
   animate();
-};
-
-function stopCircle() {
-  bird.style.transform = '';
-  cancelAnimationFrame(startCircle);
 };
 
 bird.addEventListener('click', () => {
